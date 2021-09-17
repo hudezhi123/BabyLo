@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FixedTabLayout">
+        <attr name="indicator_scroll" format="boolean" />
+        <attr name="indicator_visible" format="boolean" />
+        <attr name="indicator_width" format="enum">
+            <item>fit_text</item>
+            <item>fit_fill</item>
+        </attr>
+        <attr name="indicator_bg" format="reference" />
+        <attr name="indicator_height" format="dimension" />
+    </declare-styleable>
+</resources>

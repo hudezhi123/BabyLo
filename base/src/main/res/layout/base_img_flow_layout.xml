@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/base_dp_35"
+    android:layout_margin="@dimen/base_dp_4"
+    android:background="@drawable/base_flow_item_bg"
+    android:paddingLeft="@dimen/base_dp_12"
+    android:paddingRight="@dimen/base_dp_12">
+
+</ImageView>

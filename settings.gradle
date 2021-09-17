@@ -1,0 +1,8 @@
+include ':base'
+include ':game'
+include ':math'
+include ':en_word'
+include ':cn_word'
+include ':image'
+rootProject.name='BabyLo'
+include ':app'
