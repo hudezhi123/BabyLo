@@ -195,7 +195,6 @@ class FlowLayout @JvmOverloads constructor(
         lineHeights.clear()
         currentViewList.clear()
         val width = MeasureSpec.getSize(widthMeasureSpec)
-        val modeW = MeasureSpec.getMode(widthMeasureSpec)
         val height = MeasureSpec.getSize(heightMeasureSpec)
         val modeH = MeasureSpec.getMode(heightMeasureSpec)
         var curLineWidth = 0
