@@ -9,8 +9,7 @@ interface ApiService {
     companion object{
         val BASE_URL = "http://192.168.2.84:8080/BabyLo/"
     }
-
-
+    
 
     suspend fun getAnimalList(): Data<ListBean<Animal>>
 
