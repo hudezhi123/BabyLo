@@ -8,11 +8,11 @@ import retrofit2.http.POST
 
 interface ApiService {
 
-
-
-
+    /**
+     * 登录
+     */
     @POST(Api.LOGIN)
-    suspend fun login():BaseJson<LoginInfo>
+    suspend fun login(): BaseJson<LoginInfo>
 
     /**
      * 获取动物列表
