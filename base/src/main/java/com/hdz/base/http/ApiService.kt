@@ -1,7 +1,7 @@
 package com.hdz.base.http
 
-import com.hdz.base.database.entity.Animal
-import com.hdz.base.database.entity.Plant
+import com.hdz.base.bean.Animal
+import com.hdz.base.bean.Plant
 import com.hdz.base.http.bean.ListBean
 import com.hdz.base.http.bean.LoginInfo
 import retrofit2.http.POST
@@ -25,4 +25,7 @@ interface ApiService {
      */
     @POST(Api.PLANT_LIST)
     suspend fun getPlantList(): BaseJson<ListBean<Plant>>
+
+
+
 }

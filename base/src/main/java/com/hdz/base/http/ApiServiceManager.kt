@@ -3,9 +3,9 @@ package com.hdz.base.http
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiServiceManager private constructor(){
+class ApiServiceManager private constructor() {
 
-    var api :Api
+    var api: Api
 
     init {
         val retrofit = Retrofit.Builder()
@@ -16,15 +16,16 @@ class ApiServiceManager private constructor(){
         api = retrofit.create(Api::class.java)
     }
 
-    companion object{
-        class Single{
-            companion object{
-                val instances by lazy {
+    companion object {
+        class Single {
+            companion object {
+                val instances by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
                     ApiServiceManager()
                 }
             }
         }
-        fun getApi():Api = Single.instances.api
+
+        fun getApi(): Api = Single.instances.api
     }
-    
+
 }

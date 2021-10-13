@@ -5,7 +5,6 @@ import androidx.room.DatabaseConfiguration
 import androidx.room.InvalidationTracker
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteOpenHelper
-import com.hdz.base.database.entity.Plant
 
 @Database(entities = [Plant::class], version = 1, exportSchema = false)
 class RoomDBManager : RoomDatabase() {
