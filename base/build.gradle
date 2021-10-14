@@ -1,10 +1,5 @@
-if (isUserModule.toBoolean()) {
-    apply plugin: 'com.android.library'
-    apply plugin: 'kotlin-android'
-} else {
-    apply plugin: 'com.android.application'
-    apply plugin: 'kotlin-android'
-}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 
 android {
@@ -34,15 +29,6 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    sourceSets{
-        main{
-            if(isUserModule.toBoolean()){
-                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-            }else{
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-            }
-        }
-    }
 }
 
 dependencies {
@@ -55,8 +41,8 @@ dependencies {
     api 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
-    androidTestApi 'androidx.test.ext:junit:1.1.2'
-    androidTestApi 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation 'androidx.test.ext:junit:1.1.2'
+    testImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     api "android.arch.persistence.room:runtime:1.1.1"
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
     api 'com.github.bumptech.glide:glide:4.11.0'

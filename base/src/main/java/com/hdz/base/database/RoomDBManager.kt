@@ -6,7 +6,7 @@ import androidx.room.InvalidationTracker
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteOpenHelper
 
-@Database(entities = [Plant::class], version = 1, exportSchema = false)
+@Database(version = 1, exportSchema = false, entities = [])
 class RoomDBManager : RoomDatabase() {
 
     override fun createOpenHelper(config: DatabaseConfiguration?): SupportSQLiteOpenHelper {

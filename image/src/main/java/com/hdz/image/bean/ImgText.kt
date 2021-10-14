@@ -1,6 +1,7 @@
 package com.hdz.image.bean
 
 interface ImgText {
+
     /**
      * 获取文字部分
      */
