@@ -5,7 +5,7 @@
     <application xmlns:tools="http://schemas.android.com/tools"
         android:allowBackup="true"
         android:supportsRtl="true">
-        <activity android:name=".ImageActivity" />
+        <activity android:name=".activity.ImageActivity" />
 
     </application>
 
