@@ -6,6 +6,7 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.hdz.base.R
 
+
 object ImageViewAdapter {
 
     @BindingAdapter("android:src")

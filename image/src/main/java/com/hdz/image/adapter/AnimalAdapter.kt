@@ -63,8 +63,5 @@ class AnimalAdapter(context: Context) : RecyclerView.Adapter<AnimalAdapter.ImgTe
                 onItemClickListener?.onItemClick(position, dataList.get(position))
             })
         }
-
     }
-
-
 }
