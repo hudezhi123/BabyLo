@@ -1,0 +1,116 @@
+[
+    {
+        "desc": "",
+        "image": "eggplant",
+        "imgCount": "1",
+        "name": "茄子"
+    },
+    {
+        "desc": "",
+        "image": "apple",
+        "imgCount": "1",
+        "name": "苹果"
+    },
+    {
+        "desc": "",
+        "image": "banana",
+        "imgCount": "1",
+        "name": "香蕉"
+    },
+    {
+        "desc": "",
+        "image": "cucumber",
+        "imgCount": "1",
+        "name": "黄瓜"
+    },
+    {
+        "desc": "",
+        "image": "durian",
+        "imgCount": "1",
+        "name": "榴莲"
+    },
+    {
+        "desc": "",
+        "image": "eggplant",
+        "imgCount": "1",
+        "name": "茄子"
+    },
+    {
+        "desc": "",
+        "image": "hami_malon",
+        "imgCount": "1",
+        "name": "哈密瓜"
+    },
+    {
+        "desc": "",
+        "image": "juzi",
+        "imgCount": "1",
+        "name": "桔子"
+    },
+    {
+        "desc": "",
+        "image": "orange",
+        "imgCount": "1",
+        "name": "橙子"
+    },
+    {
+        "desc": "",
+        "image": "peach",
+        "imgCount": "1",
+        "name": "桃"
+    },
+    {
+        "desc": "",
+        "image": "peanut",
+        "imgCount": "1",
+        "name": "花生"
+    },
+    {
+        "desc": "",
+        "image": "pear",
+        "imgCount": "1",
+        "name": "梨"
+    },
+    {
+        "desc": "",
+        "image": "pitaya",
+        "imgCount": "1",
+        "name": "火龙果"
+    },
+    {
+        "desc": "",
+        "image": "pomegranate",
+        "imgCount": "1",
+        "name": "石榴"
+    },
+    {
+        "desc": "",
+        "image": "potato",
+        "imgCount": "1",
+        "name": "土豆"
+    },
+    {
+        "desc": "",
+        "image": "pumpkin",
+        "imgCount": "1",
+        "name": "南瓜"
+    },
+    {
+        "desc": "",
+        "image": "tomato",
+        "imgCount": "1",
+        "name": "西红柿"
+    },
+    {
+        "desc": "",
+        "image": "watermalon",
+        "imgCount": "1",
+        "name": "西瓜"
+    },
+    {
+        "desc": "",
+        "image": "white_malon",
+        "imgCount": "1",
+        "name": "冬瓜"
+    }
+]
