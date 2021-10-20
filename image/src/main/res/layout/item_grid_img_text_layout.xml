@@ -2,7 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
         <variable
             name="imgText"
             type="com.hdz.image.bean.ImgText" />
@@ -27,7 +26,6 @@
                 android:id="@+id/img_grid_it_item"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/img_dp_70"
-                android:src="@mipmap/icon_chicken"
                 app:imgUrl="@{imgText.img}" />
 
             <TextView

@@ -7,25 +7,29 @@ import com.bumptech.glide.Glide
 import com.hdz.base.R
 
 
-object ImageViewAdapter {
+open class ImageViewAdapter {
 
-    @BindingAdapter("android:src")
-    fun setSrc(view: ImageView, bitmap: Bitmap?) {
-        view.setImageBitmap(bitmap)
+    companion object{
+        @JvmStatic
+        @BindingAdapter("android:src")
+        fun setSrc(view: ImageView, bitmap: Bitmap?) {
+            view.setImageBitmap(bitmap)
+        }
+
+        @JvmStatic
+        @BindingAdapter("android:src")
+        fun setSrc(view: ImageView, resId: Int) {
+            view.setImageResource(resId)
+        }
+
+        @JvmStatic
+        @BindingAdapter("imgUrl")
+        fun setSrc(imageView: ImageView, url: String?) {
+            Glide.with(imageView.context).load(url)
+                .placeholder(R.drawable.icon_default_logo)
+                .into(imageView)
+        }
     }
-
-    @BindingAdapter("android:src")
-    fun setSrc(view: ImageView, resId: Int) {
-        view.setImageResource(resId)
-    }
-
-    @BindingAdapter("imageUrl")
-    fun setSrc(imageView: ImageView, url: String?) {
-        Glide.with(imageView.context).load(url)
-            .placeholder(R.drawable.icon_default_logo)
-            .into(imageView)
-    }
-
 
 }
 

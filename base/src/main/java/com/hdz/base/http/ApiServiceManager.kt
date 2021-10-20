@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiServiceManager private constructor() {
 
-    var api: Api
+    var api: ApiService
 
     init {
         val retrofit = Retrofit.Builder()
@@ -13,7 +13,7 @@ class ApiServiceManager private constructor() {
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(Api.BASE_URL)
             .build()
-        api = retrofit.create(Api::class.java)
+        api = retrofit.create(ApiService::class.java)
     }
 
     companion object {
@@ -25,7 +25,7 @@ class ApiServiceManager private constructor() {
             }
         }
 
-        fun getApi(): Api = Single.instances.api
+        fun getApi(): ApiService = Single.instances.api
     }
 
 }
