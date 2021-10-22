@@ -10,26 +10,27 @@ import com.hdz.base.bean.Animal
 import com.hdz.image.BR
 import com.hdz.image.R
 import com.hdz.image.databinding.ItemGridImgTextLayoutBinding
+import com.hdz.image.viewmodel.OnItemClickListener
 
-class AnimalAdapter(context: Context) : RecyclerView.Adapter<AnimalAdapter.ImgTextHolder>() {
+class AnimalAdapter(context: Context, itemClick: OnItemClickListener<Animal>) :
+    RecyclerView.Adapter<AnimalAdapter.ImgTextHolder>() {
 
     var context: Context
     var dataList: MutableList<Animal>
+    var itemClick: OnItemClickListener<Animal>
+
 
     init {
         this.context = context;
         dataList = mutableListOf()
+        this.itemClick = itemClick
     }
-
-    var onItemClickListener: OnItemClickListener? = null
-
-    interface OnItemClickListener {
-        fun onItemClick(position: Int = 0, animal: Animal)
-    }
-
 
     fun setData(dataList: MutableList<Animal>) {
-        this.dataList = dataList;
+        this.dataList = dataList
+        for (index in 0 until dataList.size - 1) {
+            dataList.get(index).position = index
+        }
         notifyDataSetChanged()
     }
 
@@ -47,8 +48,9 @@ class AnimalAdapter(context: Context) : RecyclerView.Adapter<AnimalAdapter.ImgTe
     }
 
     override fun onBindViewHolder(holder: ImgTextHolder, position: Int) {
-        holder.bind.setVariable(BR.animal,dataList.get(position))
+        holder.bind.setVariable(BR.animal, dataList.get(position))
         holder.bind.executePendingBindings()
+        holder.bind.itemClick = itemClick
     }
 
     override fun getItemCount(): Int = dataList.size
@@ -57,11 +59,6 @@ class AnimalAdapter(context: Context) : RecyclerView.Adapter<AnimalAdapter.ImgTe
 
         lateinit var bind: ItemGridImgTextLayoutBinding
 
-        init {
-            itemView.setOnClickListener({
-                val position = layoutPosition
-                onItemClickListener?.onItemClick(position, dataList.get(position))
-            })
-        }
+
     }
 }

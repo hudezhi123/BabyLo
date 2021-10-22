@@ -5,4 +5,4 @@ data class Animal(
     var enName: String,
     var headUrl: String,
     var imgList: MutableList<String>
-)
+) : ItemBean()

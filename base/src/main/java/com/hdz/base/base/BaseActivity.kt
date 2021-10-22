@@ -1,9 +1,13 @@
 package com.hdz.base.base
 
 import android.os.Build
+import android.text.TextUtils
+import android.view.Gravity
 import android.view.View
 import android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.hdz.base.util.L
 
 open class BaseActivity() : AppCompatActivity() {
 
@@ -40,6 +44,23 @@ open class BaseActivity() : AppCompatActivity() {
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+    }
+
+    fun showToast(tipsRes: Int, isShort: Boolean = true) {
+        val tips = resources.getString(tipsRes)
+        showToast(tips, isShort)
+    }
+
+    fun showToast(tips: String, shortTips: Boolean = true) {
+        if (TextUtils.isEmpty(tips)) {
+            L.i(this.localClassName, "Tips is empty")
+            return;
+        }
+        val toast =
+            Toast.makeText(this, tips, if (shortTips) Toast.LENGTH_SHORT else Toast.LENGTH_LONG)
+        toast.setGravity(Gravity.CENTER, 0, 0)
+        toast.show()
+
     }
 
 

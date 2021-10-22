@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.hdz.image">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application xmlns:tools="http://schemas.android.com/tools"
@@ -16,6 +15,7 @@
         android:theme="@style/Theme.BabyLo_Day"
         tools:replace="android:theme"
         tools:targetApi="n">
+        <activity android:name=".activity.AnimalDetailActivity"></activity>
         <activity android:name=".activity.AnimalActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ImageActivity">
-
-        </activity>
+        <activity android:name=".activity.ImageActivity"></activity>
     </application>
 
 </manifest>

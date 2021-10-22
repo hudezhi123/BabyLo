@@ -1,16 +1,19 @@
 package com.hdz.image.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.hdz.base.base.BaseActivity
+import com.hdz.base.bean.Animal
 import com.hdz.base.util.Constants
 import com.hdz.base.util.L
 import com.hdz.image.R
 import com.hdz.image.adapter.AnimalAdapter
 import com.hdz.image.viewmodel.AnimalViewModel
+import com.hdz.image.viewmodel.OnItemClickListener
 import kotlinx.android.synthetic.main.activity_animal.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -27,7 +30,11 @@ class AnimalActivity : BaseActivity() {
         GlobalScope.launch {
             delay(1000L)
         }
-        mAdapter = AnimalAdapter(this)
+        mAdapter = AnimalAdapter(this, object : OnItemClickListener<Animal> {
+            override fun onItemClick(view: View, bean: Animal) {
+                showToast(bean.position.toString())
+            }
+        })
         val manager = GridLayoutManager(this, 3)
         recycler_main_animal.layoutManager = manager
         recycler_main_animal.adapter = mAdapter

@@ -8,6 +8,10 @@
         <variable
             name="animal"
             type="com.hdz.base.bean.Animal" />
+
+        <variable
+            name="itemClick"
+            type="com.hdz.image.viewmodel.OnItemClickListener" />
     </data>
 
     <FrameLayout
@@ -20,6 +24,7 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/img_dp_10"
             android:gravity="center_horizontal"
+            android:onClick="@{(view)->itemClick.onItemClick(view,animal)}"
             android:orientation="vertical"
             app:cardCornerRadius="6dp">
 
