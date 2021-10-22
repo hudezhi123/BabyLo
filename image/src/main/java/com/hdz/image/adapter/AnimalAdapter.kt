@@ -47,7 +47,7 @@ class AnimalAdapter(context: Context) : RecyclerView.Adapter<AnimalAdapter.ImgTe
     }
 
     override fun onBindViewHolder(holder: ImgTextHolder, position: Int) {
-        holder.bind.setVariable(BR.imgText,dataList.get(position))
+        holder.bind.setVariable(BR.animal,dataList.get(position))
         holder.bind.executePendingBindings()
     }
 

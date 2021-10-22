@@ -8,4 +8,7 @@
     <dimen name="img_dp_10">10dp</dimen>
     <dimen name="img_dp_120">120dp</dimen>
     <dimen name="img_dp_100">100dp</dimen>
+    <dimen name="img_sp_14">14sp</dimen>
+    <dimen name="img_dp_20">20dp</dimen>
+    <dimen name="img_dp_40">40dp</dimen>
 </resources>

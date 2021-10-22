@@ -10,8 +10,8 @@ class ApiServiceManager private constructor() {
     init {
         val retrofit = Retrofit.Builder()
             .client(ApiClient.getOkClient())
-            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(Api.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
         api = retrofit.create(ApiService::class.java)
     }
