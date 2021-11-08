@@ -1,11 +1,14 @@
 package com.hdz.base.util
 
+import android.animation.Animator
 import android.animation.Keyframe
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.view.View
+import com.hdz.base.callback.OnFinishListener
 
 class AnimDo {
+
     companion object {
 
         /**
@@ -16,7 +19,8 @@ class AnimDo {
             scaleSmall: Float,
             scaleLarge: Float,
             shakeDegree: Float,
-            duration: Long
+            duration: Long,
+            finish:OnFinishListener
         ) {
             //先变大后变小
             val scaleXValueHolder = PropertyValuesHolder.ofKeyframe(
@@ -58,6 +62,23 @@ class AnimDo {
             )
             objectAnimator.duration = duration
             objectAnimator.start()
+            objectAnimator.addListener(object :Animator.AnimatorListener{
+                override fun onAnimationStart(animation: Animator?) {
+
+                }
+
+                override fun onAnimationEnd(animation: Animator?) {
+                    finish.onFinish()
+                }
+
+                override fun onAnimationCancel(animation: Animator?) {
+
+                }
+
+                override fun onAnimationRepeat(animation: Animator?) {
+
+                }
+            })
         }
 
     }

@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment.ViewPagerFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="pagerViewModel"
+            type="com.hdz.base.viewmodel.PagerViewModel" />
+
+        <variable
+            name="animal"
+            type="com.hdz.base.bean.Animal" />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/black"
+        android:paddingTop="@dimen/base_dp_40"
+        android:paddingBottom="@dimen/base_dp_40"
+        tools:context=".fragment.ViewPagerFragment">
 
-</FrameLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpage_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <ImageView
+            android:id="@+id/img_pre_pager"
+            android:layout_width="@dimen/base_dp_30"
+            android:layout_height="@dimen/base_dp_30"
+            android:layout_gravity="left"
+            android:layout_margin="@dimen/base_dp_10"
+            android:src="@mipmap/icon_nex_pre" />
+
+        <TextView
+            android:id="@+id/text_name_pager"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/base_dp_30"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/base_dp_10"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/base_sp_18"
+            android:textStyle="bold"
+            tools:text="老虎" />
+
+        <ImageView
+            android:id="@+id/img_next_pager"
+            android:layout_width="@dimen/base_dp_30"
+            android:layout_height="@dimen/base_dp_30"
+            android:layout_gravity="right"
+            android:layout_margin="@dimen/base_dp_10"
+            android:rotation="180"
+            android:src="@mipmap/icon_nex_pre" />
+
+
+        <ImageView
+
+            android:id="@+id/img_voice_play_pager"
+            android:layout_width="@dimen/base_dp_30"
+            android:layout_height="@dimen/base_dp_30"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_margin="@dimen/base_dp_20"
+            android:onClick="@{(view)->pagerViewModel.playVoice(animal.enName)}"
+            android:src="@mipmap/icon_voice_play"
+            android:text='@{animal.enName==null?"null":animal.enName}' />
+    </FrameLayout>
+</layout>

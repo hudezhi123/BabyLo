@@ -19,10 +19,9 @@ class AnimalViewModel : ViewModel() {
             {
                 val result = async { ApiServiceManager.getApi().getAnimalList() }
                 animalList.value = result.await()
-                L.i("Animal__", "ok2")
             },
             {
-                L.i("Animal__", "ok3")
+
             }
         )
 

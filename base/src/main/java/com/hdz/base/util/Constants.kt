@@ -7,5 +7,8 @@ class Constants {
         const val CODE_FAIL = 1
         const val SUCCESS = "成功"
         const val FAIL = "失败"
+
+        const val TYPE_ANIMAL = "animal";
+        const val TYPE_PLANT = "plant";
     }
 }

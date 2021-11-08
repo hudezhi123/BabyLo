@@ -5,12 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager.widget.ViewPager
 import com.hdz.base.R
+import com.hdz.base.adapter.ImgPagerAdapter
+import com.hdz.base.util.L
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val ARG_TYPE = "type"
+private const val ARG_LIST = "list"
 
 /**
  * A simple [Fragment] subclass.
@@ -19,14 +22,15 @@ private const val ARG_PARAM2 = "param2"
  */
 class ViewPagerFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var type: String
+    lateinit var list: ArrayList<String>
+    lateinit var mAdapter: ImgPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            type = it.getString(ARG_TYPE)!!
+            list = it.getStringArrayList(ARG_LIST)!!
         }
     }
 
@@ -35,7 +39,11 @@ class ViewPagerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_pager, container, false)
+        val contentView = inflater.inflate(R.layout.fragment_view_pager, container, false)
+        val viewpager: ViewPager = contentView.findViewById(R.id.viewpage_pager)
+        mAdapter = ImgPagerAdapter(context, list)
+        viewpager.adapter = mAdapter
+        return contentView
     }
 
     companion object {
@@ -49,11 +57,11 @@ class ViewPagerFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(type: String, list: ArrayList<String>) =
             ViewPagerFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_TYPE, type)
+                    putStringArrayList(ARG_LIST, list)
                 }
             }
     }

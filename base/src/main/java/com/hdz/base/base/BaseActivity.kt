@@ -1,6 +1,7 @@
 package com.hdz.base.base
 
 import android.os.Build
+import android.os.Bundle
 import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
@@ -9,7 +10,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.hdz.base.util.L
 
-open class BaseActivity() : AppCompatActivity() {
+open abstract class BaseActivity() : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(getLayoutId())
+        init()
+    }
+
+    abstract fun getLayoutId(): Int
+
+    abstract fun init()
+
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
